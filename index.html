@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-loading">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-          content="MediTrack Sensor — Real-time IoT monitoring for medicines by TechnoByteLambders (UPC). Protecting health through accurate data.">
-    <title>MediTrack Sensor</title>
-    <link rel="icon" type="image/png" href="Imagenes/Logo_MediTrack.png">
+          content="KairoLabs — Monitoreo IoT en tiempo real para medicamentos por Aether System (UPC). Curso Diseño de Experimentos 1ASI0732.">
+    <title>KairoLabs</title>
+    <link rel="icon" type="image/png" href="Imagenes/Kairo-Labs-Logo-sin-fondo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-loader{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#112433}
+        html.is-loading,html.is-loading body{overflow:hidden}
+    </style>
 </head>
 
 <body>
+
+<div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="page-loader__ambient"></div>
+    <div class="page-loader__stage">
+        <div class="page-loader__ring"></div>
+        <div class="page-loader__core">
+            <img src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs" class="page-loader__logo">
+        </div>
+    </div>
+    <p class="page-loader__text">KairoLabs</p>
+</div>
 
 <div class="top-header-new d-none d-lg-block">
     <div class="container d-flex justify-content-between align-items-center h-100">
         <div class="contact-links">
             <span class="me-4"><i class="bi bi-telephone text-orange me-2"></i> +51 987 654 321</span>
-            <span><i class="bi bi-envelope text-orange me-2"></i> contacto@technobytelambders.pe</span>
+            <span><i class="bi bi-envelope text-orange me-2"></i> contacto@kairolabs.pe</span>
         </div>
         <div class="social-links-top d-flex align-items-center flex-wrap justify-content-end gap-2">
             <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -37,12 +52,12 @@
 
 <nav class="navbar navbar-expand-lg navbar-new shadow-sm sticky-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="Imagenes/Logo_MediTrack.png" alt="MediTrack Logo" height="42" class="me-2">
-            <span class="fw-bold fs-4">MediTrack <span class="text-orange">Sensor</span></span>
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+            <img src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs Logo" height="42" class="me-2">
+            <span class="fw-bold fs-4 brand-wordmark">Kairo<span class="text-orange">Labs</span></span>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <i class="bi bi-list fs-1 text-navy"></i>
+            <i class="bi bi-list fs-1 text-brand-navy"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-lg-3">
@@ -53,31 +68,39 @@
                 <li class="nav-item"><a class="nav-link" href="#equipo"><span data-i18n="nav_equipo">Equipo</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="#planes"><span data-i18n="nav_planes">Planes</span></a></li>
             </ul>
-            <div class="lang-switch lang-switch--nav d-flex align-items-center my-2 my-lg-0" role="group" data-i18n-aria="lang_group_aria" aria-label="Choose language">
-                <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+            <div class="lang-switch lang-switch--nav d-flex align-items-center my-2 my-lg-0" role="group" data-i18n-aria="lang_group_aria" aria-label="Seleccionar idioma">
+                <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 <span class="lang-divider" aria-hidden="true">|</span>
-                <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+                <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
             </div>
+            <a href="#contacto" class="btn-nav-cta btn-hero-sweep">
+                <span data-i18n="nav_cta">Comienza ahora</span>
+                <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            </a>
         </div>
     </div>
 </nav>
 
 <header id="inicio" class="hero-section">
-    <div class="container h-100 d-flex align-items-center justify-content-center">
+    <video class="hero-video" autoplay muted loop playsinline poster="Imagenes/section_home-hero.jpeg" aria-hidden="true">
+        <source src="Videos/video-4-kairoLabs.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay" aria-hidden="true"></div>
+
+    <div class="container h-100 d-flex align-items-center justify-content-center position-relative">
         <div class="row justify-content-center w-100">
-            <div class="col-lg-12">
-                <span id="typing-tagline" class="hero-tagline"></span>
-                <h1 id="typing-title" class="hero-title"></h1>
+            <div class="col-lg-10 col-xl-9">
+                <div class="hero-copy" aria-live="polite">
+                    <span id="typing-tagline" class="hero-tagline">Conservación farmacéutica · IoT</span>
+                    <h1 id="typing-title" class="hero-title">Alertas en tiempo real para hospitales, farmacias y distribución</h1>
+                    <div class="hero-separator"></div>
+                    <p id="typing-desc" class="hero-subtitle">Temperatura, humedad y luz bajo control: menos merma, más trazabilidad y cumplimiento DIGEMID/MINSA.</p>
+                </div>
 
-                <div class="hero-separator"></div>
-
-                <p id="typing-desc" class="hero-subtitle"></p>
-
-                <div class="d-flex justify-content-center mt-5">
-                    <a href="https://meditracksensor-iot-frontend.vercel.app/login" id="hero-login" class="btn btn-hero"
-                       target="_blank" rel="noopener noreferrer"
-                       style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-                        <i class="bi bi-box-arrow-in-right"></i> <span data-i18n="hero_btn_login">Iniciar sesión</span>
+                <div class="d-flex justify-content-center mt-4 mt-md-5">
+                    <a href="#contacto" id="hero-login" class="btn btn-hero btn-hero-sweep">
+                        <span data-i18n="hero_btn_login">¡Comienza hoy mismo!</span>
+                        <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
                     </a>
                 </div>
             </div>
@@ -87,97 +110,31 @@
 
 <section id="problema" class="floating-cards-wrapper grid-pattern-bg">
     <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4">
-                <div class="floating-card-horizontal reveal-card">
-                    <div class="floating-icon-box"><i class="bi bi-thermometer-half"></i></div>
-                    <div class="floating-card-content">
-                        <h4 data-i18n="float_h1">control de Temperatura</h4>
-                        <p data-i18n="float_p1">Monitoreo continuo de temperatura para biológicos y vacunas que requieren cadena de frío.</p>
-                    </div>
+        <div class="kairo-partners">
+            <div class="kairo-partners__card">
+                <div class="kairo-partners__copy">
+                    <span class="kairo-partners__kicker" data-i18n="about_partners_kicker">Marco regulatorio</span>
+                    <p data-i18n-html="about_partners_html">Respaldados por <em>instituciones</em> líderes</p>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="floating-card-horizontal reveal-card">
-                    <div class="floating-icon-box"><i class="bi bi-droplet"></i></div>
-                    <div class="floating-card-content">
-                        <h4 data-i18n="float_h2">Humedad y Luz</h4>
-                        <p data-i18n="float_p2">Control de humedad relativa y exposición lumínica para evitar degradación química.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="floating-card-horizontal reveal-card">
-                    <div class="floating-icon-box"><i class="bi bi-graph-up-arrow"></i></div>
-                    <div class="floating-card-content">
-                        <h4 data-i18n="float_h3">Trazabilidad Total</h4>
-                        <p data-i18n="float_p3">Registros históricos para auditorías y cumplimiento normativo DIGEMID/MINSA.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="nosotros" class="bg-white overflow-hidden grid-pattern-bg">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6 reveal-left">
-                <div class="about-image-group">
-                    <img src="Imagenes/section_2.jpeg" alt="MediTrack Systems" class="about-img-main">
-                    <img src="Imagenes/section_2-1.jpeg" alt="Pharmacists at work" class="about-img-secondary">
-                    <div class="about-experience-box">
-                        <i class="bi bi-cpu fs-1 mb-2"></i>
-                        <h3 class="fw-bold mb-0">100%</h3>
-                        <p class="small mb-0" data-i18n="about_innov">Innovación UPC</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 reveal-right">
-                <div class="ps-lg-4">
-                    <span class="about-tagline mb-3" data-i18n="about_tag">QUIÉNES SOMOS</span>
-                    <h2 class="display-5 fw-bold mb-4" data-i18n="about_h2">Soluciones tecnológicas para la conservación de medicamentos</h2>
-                    <p class="text-muted mb-4 fs-5" data-i18n-html="about_lead_html">
-                        <strong>TechnoByteLambders</strong> es una startup de estudiantes de la <strong>UPC</strong> comprometida
-                        con el uso de la tecnología para mejorar el monitoreo y conservación de medicamentos en el sector salud del Perú.
-                    </p>
-
-                    <div class="row g-3 mb-4">
-                        <div class="col-6">
-                            <div class="p-3 border rounded-3 h-100" style="border-color: var(--primary-orange) !important; background: rgba(243,112,33,0.05);">
-                                <h6 class="fw-bold text-orange mb-2"><i class="bi bi-bullseye me-2"></i><span data-i18n="about_mission_t">MISIÓN</span></h6>
-                                <p class="small mb-0 text-muted" data-i18n="about_mission_p">Diseñar soluciones tecnológicas para el monitoreo en tiempo real de temperatura, humedad y luz.</p>
+                <div class="kairo-partners__rail">
+                    <div class="kairo-marquee">
+                        <div class="kairo-marquee__track">
+                            <div class="kairo-marquee__group">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Cenares-removebg-preview.png" alt="CENARES">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Consytec-removebg-preview.png" alt="CONSYTEC">
+                                <img class="kairo-marquee__logo kairo-marquee__logo--badge" src="Imagenes/Empresas/Digemid-removebg-preview.png" alt="DIGEMID">
+                                <img class="kairo-marquee__logo kairo-marquee__logo--badge" src="Imagenes/Empresas/Minsa-removebg-preview.png" alt="MINSA">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Osinergmin-removebg-preview.png" alt="Osinergmin">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Susalud-removebg-preview.png" alt="SuSalud">
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="p-3 border rounded-3 h-100" style="border-color: #3b82f6 !important; background: rgba(59,130,246,0.05);">
-                                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-eye me-2"></i><span data-i18n="about_vision_t">VISIÓN</span></h6>
-                                <p class="small mb-0 text-muted" data-i18n="about_vision_p">Modernizar la gestión de medicamentos mediante IoT y plataformas digitales.</p>
+                            <div class="kairo-marquee__group" aria-hidden="true">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Cenares-removebg-preview.png" alt="">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Consytec-removebg-preview.png" alt="">
+                                <img class="kairo-marquee__logo kairo-marquee__logo--badge" src="Imagenes/Empresas/Digemid-removebg-preview.png" alt="">
+                                <img class="kairo-marquee__logo kairo-marquee__logo--badge" src="Imagenes/Empresas/Minsa-removebg-preview.png" alt="">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Osinergmin-removebg-preview.png" alt="">
+                                <img class="kairo-marquee__logo" src="Imagenes/Empresas/Susalud-removebg-preview.png" alt="">
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex gap-2 flex-wrap mt-3">
-                        <span class="badge" style="background: var(--primary-orange); color: white; padding: 6px 12px; font-size: 0.75rem;">
-                            <i class="bi bi-shield-check me-1"></i>DIGEMID
-                        </span>
-                        <span class="badge" style="background: #3b82f6; color: white; padding: 6px 12px; font-size: 0.75rem;">
-                            <i class="bi bi-hospital me-1"></i>MINSA
-                        </span>
-                    </div>
-
-                    <div class="d-flex gap-4 mt-4 text-muted small">
-                        <div><i class="bi bi-check-circle text-orange me-1"></i> <span data-i18n="about_chk1">Integridad del producto</span></div>
-                        <div><i class="bi bi-check-circle text-orange me-1"></i> <span data-i18n="about_chk2">Soluciones escalables</span></div>
-                        <div><i class="bi bi-check-circle text-orange me-1"></i> <span data-i18n="about_chk3">Necesidades reales</span></div>
-                    </div>
-
-                    <div class="d-flex align-items-center mt-3 pt-3 border-top">
-                        <img src="https://ui-avatars.com/api/?name=TBL&background=F37021&color=fff&size=40"
-                             alt="Team" class="rounded-circle me-3">
-                        <div>
-                            <h6 class="fw-bold mb-0" data-i18n="about_team_h">Equipo TechnoByteLambders</h6>
-                            <p class="text-orange small mb-0" data-i18n="about_team_p">Estudiantes UPC - Desarrollo de Software</p>
                         </div>
                     </div>
                 </div>
@@ -186,170 +143,283 @@
     </div>
 </section>
 
-<section id="tecnologia" class="bg-light overflow-hidden">
+<section id="nosotros" class="kairo-about">
+    <div class="kairo-about__ambient" aria-hidden="true">
+        <div class="kairo-about__grid-bg"></div>
+    </div>
+    <div class="container kairo-about__wrap">
+        <div class="kairo-about__layout">
+            <div class="kairo-acc" data-kairo-acc>
+                <div class="kairo-acc__heading">
+                    <span data-i18n="about_panel">Aether System</span>
+                    <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                </div>
+                <article class="kairo-acc__item is-open" data-kairo-acc-item>
+                    <button type="button" class="kairo-acc__trigger" data-kairo-acc-open>
+                        <span data-i18n="about_mission_t">Misión</span>
+                        <i class="bi bi-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="kairo-acc__card">
+                        <div class="kairo-acc__card-head">
+                            <h3 data-i18n="about_mission_t">Misión</h3>
+                            <span class="kairo-acc__num">01</span>
+                        </div>
+                        <p data-i18n="about_mission_p">Diseñar plataformas que garanticen la conservación adecuada de medicamentos mediante monitoreo continuo de temperatura, humedad y luz.</p>
+                    </div>
+                </article>
+                <article class="kairo-acc__item" data-kairo-acc-item>
+                    <button type="button" class="kairo-acc__trigger" data-kairo-acc-open>
+                        <span data-i18n="about_vision_t">Visión</span>
+                        <i class="bi bi-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="kairo-acc__card">
+                        <div class="kairo-acc__card-head">
+                            <h3 data-i18n="about_vision_t">Visión</h3>
+                            <span class="kairo-acc__num">02</span>
+                        </div>
+                        <p data-i18n="about_vision_p">Modernizar la logística farmacéutica en el Perú con IoT, arquitectura orientada a dominios y pipelines de DevOps.</p>
+                    </div>
+                </article>
+                <article class="kairo-acc__item" data-kairo-acc-item>
+                    <button type="button" class="kairo-acc__trigger" data-kairo-acc-open>
+                        <span data-i18n="about_acc3_t">Equipo académico</span>
+                        <i class="bi bi-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="kairo-acc__card">
+                        <div class="kairo-acc__card-head">
+                            <h3 data-i18n="about_acc3_t">Equipo académico</h3>
+                            <span class="kairo-acc__num">03</span>
+                        </div>
+                        <p data-i18n="about_acc3_p">Aether System es el equipo de la UPC (curso 1ASI0732 – Diseño de Experimentos) que construye KairoLabs con criterios de verificación y entrega continua.</p>
+                    </div>
+                </article>
+                <article class="kairo-acc__item" data-kairo-acc-item>
+                    <button type="button" class="kairo-acc__trigger" data-kairo-acc-open>
+                        <span data-i18n="about_acc4_t">Verificación continua</span>
+                        <i class="bi bi-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="kairo-acc__card">
+                        <div class="kairo-acc__card-head">
+                            <h3 data-i18n="about_acc4_t">Verificación continua</h3>
+                            <span class="kairo-acc__num">04</span>
+                        </div>
+                        <p data-i18n="about_acc4_p">Hipótesis medibles, trazabilidad por lote y evidencia auditable para hospitales, farmacias y distribución.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="kairo-about__copy">
+                <span class="kairo-about__kicker" data-i18n="about_kicker">El proyecto</span>
+                <h2 data-i18n="about_h2">Soluciones tecnológicas para la conservación de medicamentos</h2>
+                <p data-i18n-html="about_lead_html">
+                    <strong>Aether System</strong> es el equipo académico de la <strong>UPC</strong> (curso <strong>1ASI0732 – Diseño de Experimentos</strong>) detrás de <strong>KairoLabs</strong>: una plataforma IoT para monitorear y conservar medicamentos con criterios de verificación, validación y entrega continua.
+                </p>
+                <a href="#equipo" class="kairo-about__cta btn-hero-sweep">
+                    <span data-i18n="about_cta">Conoce al equipo</span>
+                    <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="kairo-expand" data-video-expand-section aria-labelledby="kairo-expand-title">
+    <div class="kairo-expand__sticky" data-video-expand-sticky>
+        <div class="kairo-expand__ambient" aria-hidden="true">
+            <div class="kairo-expand__grid"></div>
+        </div>
+        <div class="kairo-expand__intro">
+            <div class="kairo-expand__intro-content">
+                <h2 class="kairo-expand__intro-text" id="kairo-expand-title" data-kairo-expand-copy data-i18n="expand_intro">Cada día sin datos claros es una oportunidad perdida: merma, desviaciones y lotes que no se pueden auditar.</h2>
+            </div>
+            <div class="kairo-expand__placeholder" data-video-expand-placeholder></div>
+        </div>
+        <figure class="kairo-expand__media" data-video-expand-media>
+            <video class="kairo-expand__video" autoplay muted loop playsinline>
+                <source src="Videos/video-5-kairoLabs.mp4" type="video/mp4">
+            </video>
+            <figcaption class="kairo-expand__caption" data-video-expand-caption>
+                <p class="kairo-expand__caption-text" data-i18n="expand_caption">KairoLabs muestra el almacén como es: temperatura, humedad y luz en una sola vista para actuar a tiempo.</p>
+                <span class="kairo-expand__caption-info" aria-hidden="true"><i class="bi bi-info"></i></span>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<section id="tecnologia" class="bg-light">
     <div class="container">
         <div class="section-title text-center mb-5">
             <div class="bg-text-watermark reveal-watermark" data-i18n="tech_wm">MONITOREO 360</div>
             <span class="text-orange fw-bold text-uppercase letter-spacing-2 reveal-item" data-i18n="tech_kicker">Monitoreo 360°</span>
             <h2 class="display-5 fw-bold mt-2 reveal-item" data-i18n="tech_h2">Tecnología Inteligente</h2>
             <p class="text-muted mx-auto reveal-item" style="max-width: 700px;" data-i18n="tech_lead">
-                Nuestra plataforma web permite monitorear en tiempo real temperatura, humedad y luz, generando alertas
-                automáticas y facilitando la gestión de la conservación de medicamentos.
+                KairoLabs centraliza telemetría IoT, dashboards en tiempo real, alertas ante desviaciones e históricos auditables para la conservación de medicamentos.
             </p>
         </div>
 
-        <div class="row g-4 mb-5">
-            <div class="col-lg-3 col-md-6">
-                <div class="tech-feature-card shadow-sm reveal-item">
-                    <div class="tech-icon-circle"><i class="bi bi-thermometer-half"></i></div>
-                    <h4 data-i18n="tech_f1h">Temperatura</h4>
-                    <p class="text-muted small" data-i18n="tech_f1p">Control estricto para vacunas y biológicos en rangos críticos de 2°C a 8°C.</p>
+        <div class="offer-carousel mb-5" data-offer-carousel>
+            <button type="button" class="offer-carousel__btn offer-carousel__btn--prev" data-offer-prev aria-label="Anterior">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="offer-carousel__viewport">
+                <div class="offer-carousel__track" data-offer-track>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-thermometer-half"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f1h">Temperatura</h4>
+                            <p data-i18n="tech_f1p">Control estricto para vacunas y biológicos en rangos críticos de 2°C a 8°C.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-droplet"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f2h">Humedad</h4>
+                            <p data-i18n="tech_f2p">Evitamos la degradación química y proliferación de microorganismos.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-brightness-high"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f3h">Iluminación</h4>
+                            <p data-i18n="tech_f3p">Protección avanzada contra la fotodegradación para medicamentos sensibles.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-broadcast"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f4h">Conectividad 24/7</h4>
+                            <p data-i18n="tech_f4p">Alertas inmediatas vía IoT incluso en zonas de baja cobertura regional.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-bell"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f5h">Alertas accionables</h4>
+                            <p data-i18n="tech_f5p">Notificaciones por umbral (normal, advertencia, crítico) para decidir a tiempo y evitar merma.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-clipboard-data"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f6h">Trazabilidad auditable</h4>
+                            <p data-i18n="tech_f6p">Históricos de conservación para auditorías DIGEMID/MINSA y evidencia de cada lote o sede.</p>
+                        </div>
+                    </article>
+                    <article class="offer-card">
+                        <figure class="offer-card__photo">
+                            <img src="" alt="" data-offer-image>
+                            <div class="offer-card__icon"><i class="bi bi-diagram-3"></i></div>
+                        </figure>
+                        <div class="offer-card__body">
+                            <h4 data-i18n="tech_f7h">Supervisión multi-sede</h4>
+                            <p data-i18n="tech_f7p">Dashboards centralizados para hospitales, farmacias y distribución desde web y móvil.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="tech-feature-card shadow-sm reveal-item">
-                    <div class="tech-icon-circle"><i class="bi bi-droplet"></i></div>
-                    <h4 data-i18n="tech_f2h">Humedad</h4>
-                    <p class="text-muted small" data-i18n="tech_f2p">Evitamos la degradación química y proliferación de microorganismos.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="tech-feature-card shadow-sm reveal-item">
-                    <div class="tech-icon-circle"><i class="bi bi-brightness-high"></i></div>
-                    <h4 data-i18n="tech_f3h">Iluminación</h4>
-                    <p class="text-muted small" data-i18n="tech_f3p">Protección avanzada contra la fotodegradación para medicamentos sensibles.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="tech-feature-card shadow-sm reveal-item">
-                    <div class="tech-icon-circle"><i class="bi bi-broadcast"></i></div>
-                    <h4 data-i18n="tech_f4h">Conectividad 24/7</h4>
-                    <p class="text-muted small" data-i18n="tech_f4p">Alertas inmediatas vía IoT incluso en zonas de baja cobertura regional.</p>
-                </div>
-            </div>
+            <button type="button" class="offer-carousel__btn offer-carousel__btn--next" data-offer-next aria-label="Siguiente">
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </div>
+    </div>
 
-        <div class="video-feature-wrapper reveal-item mb-5 mx-auto">
-            <div class="video-feature-card mx-auto">
-                <div class="video-poster shadow-sm" role="button" tabindex="0" aria-label="Reproducir video de MediTrack"
-                    data-youtube="CmZFPmtnKm4"
-                    style="background-image: url('https://img.youtube.com/vi/CmZFPmtnKm4/maxresdefault.jpg');">
-                    <div class="video-overlay">
-                        <div class="video-play-wrap">
-                            <i class="bi bi-play-fill video-play" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-caption text-center">
-                    <h5 class="fw-bold mb-1">Video: Sobre MediTrack</h5>
-                    <p class="mb-0">Mira nuestro video "About the product" para ver la plataforma en acción.</p>
-                </div>
-            </div>
-        </div>
+    <div class="product-mosaic">
+            <article class="product-mosaic__media">
+                <video autoplay muted loop playsinline>
+                    <source src="Videos/video-1-kairoLabs.mp4" type="video/mp4">
+                </video>
+            </article>
+            <article class="product-mosaic__panel">
+                <p class="product-mosaic__kicker" data-i18n="mosaic_kicker">Resultados esperados</p>
+                <h3 class="product-mosaic__title" data-i18n="mosaic_title">Toma decisiones más inteligentes en tu almacén y reduce el riesgo operativo.</h3>
+                <ul class="product-mosaic__stats">
+                    <li>
+                        <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                        <strong data-i18n="mosaic_s1v">&lt; 5 min</strong>
+                        <span data-i18n="mosaic_s1l">Tiempo de respuesta ante una alerta</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-broadcast" aria-hidden="true"></i>
+                        <strong data-i18n="mosaic_s2v">24/7</strong>
+                        <span data-i18n="mosaic_s2l">Telemetría de temperatura, humedad y luz</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+                        <strong data-i18n="mosaic_s3v">+30%</strong>
+                        <span data-i18n="mosaic_s3l">Mejora de trazabilidad en los primeros 6 meses</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        <strong data-i18n="mosaic_s4v">100%</strong>
+                        <span data-i18n="mosaic_s4l">Históricos auditables para DIGEMID / MINSA</span>
+                    </li>
+                </ul>
+            </article>
+            <article class="product-mosaic__copy">
+                <p class="product-mosaic__eyebrow" data-i18n="mosaic_eyebrow">Una recomendación de KairoLabs</p>
+                <h3 data-i18n="mosaic_h3">Nunca enfrentes una desviación crítica solo</h3>
+                <p data-i18n="mosaic_p">Cuando una condición ambiental se sale de rango, KairoLabs conecta los datos de tu sede, evalúa la situación y te ayuda a responder más rápido con alertas accionables.</p>
+                <a href="#contacto" class="btn btn-hero btn-hero-sweep btn-hero-sweep--light">
+                    <span data-i18n="mosaic_btn">Explorar la plataforma</span>
+                    <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                </a>
+            </article>
+            <article class="product-mosaic__media">
+                <video autoplay muted loop playsinline>
+                    <source src="Videos/video-2-kairoLabs.mp4" type="video/mp4">
+                </video>
+            </article>
+    </div>
 
-        <div class="dashboard-medical-container reveal-item">
-            <div class="text-center mb-5">
-                <p class="text-success small fw-bold mb-1"><i class="bi bi-house-door me-2"></i>TECHNOBYTELAMBDERS</p>
-                <h3 class="fw-bold text-dark mb-0" data-i18n="dash_h3">Live Data Dashboard — Nodo 01</h3>
-                <p class="text-muted small mb-3" data-i18n="dash_sub">Logística Farmacéutica · DIGEMID / MINSA</p>
-                <div class="status-badge-medical">
-                    <span class="status-dot-green"></span>
-                    <span class="small fw-bold text-dark" data-i18n="dash_active">Sistema activo</span>
+    <div class="container showcase-wrap">
+        <div class="yt-showcase" data-yt-showcase>
+            <div class="yt-showcase__stage" data-yt-stage style="background-image: url('https://img.youtube.com/vi/lF9zzrsnUZw/maxresdefault.jpg');">
+                <p class="yt-showcase__caption" data-i18n-html="yt_caption">Mira cómo funciona KairoLabs<br>en tu almacén</p>
+            </div>
+            <div class="yt-plus-overlay" data-yt-plus-overlay hidden>
+                <div class="yt-plus-overlay__orbit" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <div class="yt-plus-overlay__card">
+                    <div class="yt-plus-overlay__icon">
+                        <img src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                    </div>
+                    <h3 data-i18n="yt_plus_h">¿Listo para ver KairoLabs en acción?</h3>
+                    <p data-i18n="yt_plus_p">No reproduzcas el video todavía: ve directo a la plataforma y obtén el producto para tu almacén.</p>
+                    <a href="#planes" class="btn btn-hero btn-hero-sweep">
+                        <span data-i18n="yt_plus_btn">Obtener la app</span>
+                        <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
-
-            <div class="row g-4 mb-4">
-                <div class="col-lg-4">
-                    <div class="medical-data-card card-bg-orange">
-                        <span class="card-label label-orange">TEMP</span>
-                        <div class="card-value-group">
-                            <h2 id="iot-temp" class="value-orange">2.0</h2>
-                        </div>
-                        <span class="unit-text d-block mb-3" data-i18n="dash_unit_c">°Celsius</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill fill-orange" style="width: 40%;"></div>
-                        </div>
-                        <p class="range-info" data-i18n="dash_range_c">Rango: 2 – 8°C</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="medical-data-card card-bg-blue">
-                        <span class="card-label label-blue">HUMIDITY</span>
-                        <div class="card-value-group">
-                            <h2 id="iot-humidity" class="value-blue">48.4</h2>
-                        </div>
-                        <span class="unit-text d-block mb-3">% RH</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill fill-blue" style="width: 60%;"></div>
-                        </div>
-                        <p class="range-info" data-i18n="dash_range_h">Rango: 30 – 70% RH</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="medical-data-card card-bg-gold">
-                        <span class="card-label label-gold">LIGHT</span>
-                        <div class="card-value-group">
-                            <h2 id="iot-light" class="value-gold">437</h2>
-                        </div>
-                        <span class="unit-text d-block mb-3" data-i18n="dash_lux">Lux intensity</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill fill-gold" style="width: 45%;"></div>
-                        </div>
-                        <p class="range-info" data-i18n="dash_range_l">Rango: 0 – 1000 Lux</p>
-                    </div>
-                </div>
+            <div class="yt-showcase__controls">
+                <button type="button" class="yt-showcase__chip yt-showcase__chip--yt" data-yt-play aria-label="Reproducir en YouTube">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4L15.8 12z"/></svg>
+                </button>
+                <button type="button" class="yt-showcase__chip" data-yt-play aria-label="Reproducir video">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+                <button type="button" class="yt-showcase__chip yt-showcase__plus" data-yt-plus aria-label="Obtener la app" aria-expanded="false">
+                    <span class="yt-plus-mark" aria-hidden="true"></span>
+                </button>
             </div>
-
-            <div class="dashboard-medical-footer">
-                <div class="d-flex justify-content-between align-items-center small">
-                    <div class="text-muted"><i class="bi bi-shield-check me-2 text-success"></i><span data-i18n="dash_footer_l">SEGURIDAD AES-256 · GRADO FARMACÉUTICO</span></div>
-                    <div class="text-muted" data-i18n="dash_footer_r">Última actualización: hace 2 min</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-3 mt-4 justify-content-center">
-            <div class="col-lg-3">
-                <div class="mini-stat-card">
-                    <div class="d-flex align-items-center justify-content-center gap-3">
-                        <i class="bi bi-activity text-success fs-4"></i>
-                        <div>
-                            <p class="text-muted-dark small fw-bold mb-0" data-i18n="mini_alerts">ALERTAS HOY</p>
-                            <h5 class="fw-bold mb-0 text-dark">0</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="mini-stat-card">
-                    <div class="d-flex align-items-center justify-content-center gap-3">
-                        <i class="bi bi-display text-primary fs-4"></i>
-                        <div>
-                            <p class="text-muted-dark small fw-bold mb-0">UPTIME</p>
-                            <h5 class="fw-bold mb-0 text-dark">99.8%</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="mini-stat-card">
-                    <div class="d-flex align-items-center justify-content-center gap-3">
-                        <i class="bi bi-clock-history text-warning fs-4"></i>
-                        <div>
-                            <p class="text-muted-dark small fw-bold mb-0" data-i18n="mini_refresh">REFRESCO</p>
-                            <h5 class="fw-bold mb-0 text-dark">30 s</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5 pt-4 reveal-item">
-            <p class="text-muted mb-4 mx-auto" style="max-width: 800px;" data-i18n="tech_bottom_p">
-                MediTrack Sensor permite monitorear en tiempo real las condiciones de almacenamiento de medicamentos,
-                generando alertas automáticas y almacenando datos históricos para garantizar su conservación adecuada.
-            </p>
-            <a href="#planes" class="btn btn-hero" data-i18n="tech_cta">Ver Planes de Monitoreo</a>
         </div>
     </div>
 </section>
@@ -361,30 +431,30 @@
             <span class="text-orange fw-bold text-uppercase letter-spacing-2 reveal-item" data-i18n="sec_kicker">Sectores Objetivo</span>
             <h2 class="display-5 fw-bold mt-2 reveal-item" data-i18n="sec_h2">implementación Estratégica</h2>
             <p class="text-muted mx-auto reveal-item" style="max-width: 650px;" data-i18n="sec_lead">
-                Soluciones de monitoreo adaptadas a las necesidades de hospitales, clínicas, farmacias y almacenes farmacéuticos.
+                Dos segmentos objetivo del informe: operación en almacén y gestión de cumplimiento.
             </p>
         </div>
 
-        <div class="row g-4">
-            <div class="col-lg-4">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6">
                 <div class="sector-card-premium reveal-zoom">
                     <div class="sector-img-wrapper">
-                        <img src="Imagenes/Hospital-meditrack.jpeg" class="sector-img" alt="Hospitales">
-                        <div class="sector-badge blue">
-                            <i class="bi bi-hospital"></i> <span data-i18n="sec_b1">Salud</span>
+                        <img src="Imagenes/section_3.jpeg" class="sector-img" alt="Personal operativo de almacén">
+                        <div class="sector-badge orange">
+                            <i class="bi bi-person-badge"></i> <span data-i18n="sec_b1">Segmento 01</span>
                         </div>
                     </div>
                     <div class="sector-floating-icon">
-                        <i class="bi bi-hospital"></i>
+                        <i class="bi bi-box-seam"></i>
                     </div>
                     <div class="sector-content">
-                        <h3 class="sector-title" data-i18n="sec_t1">Hospitales y Clínicas</h3>
+                        <h3 class="sector-title" data-i18n="sec_t1">Personal operativo de almacenes farmacéuticos</h3>
                         <p class="sector-text" data-i18n="sec_p1">
-                            Monitoreo integral para almacenes hospitalarios y áreas de almacenamiento de biológicos. Cumplimiento normativo MINSA.
+                            Técnicos y operarios que supervisan temperatura, humedad y luz en el día a día, y necesitan alertas accionables.
                         </p>
                         <div class="sector-tags mb-4">
-                            <span class="tag" data-i18n="sec_tag1a">tiempo real</span>
-                            <span class="tag" data-i18n="sec_tag1b">MINSA</span>
+                            <span class="tag" data-i18n="sec_tag1a">Tiempo real</span>
+                            <span class="tag" data-i18n="sec_tag1b">Alertas</span>
                             <span class="tag" data-i18n="sec_tag1c">Cadena de frío</span>
                         </div>
                         <div class="sector-footer">
@@ -394,57 +464,29 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="sector-card-premium reveal-zoom">
                     <div class="sector-img-wrapper">
-                        <img src="Imagenes/section_3.jpeg" class="sector-img" alt="Almacenes">
-                        <div class="sector-badge orange">
-                            <i class="bi bi-box-seam"></i> <span data-i18n="sec_b2">Distribución</span>
+                        <img src="Imagenes/Hospital-meditrack.jpeg" class="sector-img" alt="Gestores farmacéuticos">
+                        <div class="sector-badge blue">
+                            <i class="bi bi-clipboard2-check"></i> <span data-i18n="sec_b2">Segmento 02</span>
                         </div>
                     </div>
                     <div class="sector-floating-icon">
-                        <i class="bi bi-truck"></i>
+                        <i class="bi bi-building-check"></i>
                     </div>
                     <div class="sector-content">
-                        <h3 class="sector-title" data-i18n="sec_t2">Centros de Distribución</h3>
+                        <h3 class="sector-title" data-i18n="sec_t2">Gestores y responsables de farmacia</h3>
                         <p class="sector-text" data-i18n="sec_p2">
-                            Optimización para almacenes farmacéuticos y centros de distribución como los de Lurín. Multi-sedes centralizado.
+                            Jefes de farmacia y entidades de salud que necesitan evidencia auditable y supervisión multi-sede.
                         </p>
                         <div class="sector-tags mb-4">
-                            <span class="tag" data-i18n="sec_tag2a">Multi-sedes</span>
-                            <span class="tag" data-i18n="sec_tag2b">Centralizado</span>
-                            <span class="tag" data-i18n="sec_tag2c">Alertas</span>
+                            <span class="tag" data-i18n="sec_tag2a">Auditoría</span>
+                            <span class="tag" data-i18n="sec_tag2b">DIGEMID / MINSA</span>
+                            <span class="tag" data-i18n="sec_tag2c">Multi-sede</span>
                         </div>
                         <div class="sector-footer">
                             <a href="#contacto" class="sector-link"><span data-i18n="sec_l2">MÁS INFO</span> <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="sector-card-premium reveal-zoom">
-                    <div class="sector-img-wrapper">
-                        <img src="Imagenes/section_2-1.jpeg" class="sector-img" alt="Farmacias">
-                        <div class="sector-badge green">
-                            <i class="bi bi-shop"></i> <span data-i18n="sec_b3">Retail</span>
-                        </div>
-                    </div>
-                    <div class="sector-floating-icon">
-                        <i class="bi bi-capsule"></i>
-                    </div>
-                    <div class="sector-content">
-                        <h3 class="sector-title" data-i18n="sec_t3">Farmacias</h3>
-                        <p class="sector-text" data-i18n="sec_p3">
-                            Soluciones compactas para cumplimiento de normas DIGEMID. Control de temperatura y humedad en zonas de visualización.
-                        </p>
-                        <div class="sector-tags mb-4">
-                            <span class="tag" data-i18n="sec_tag3a">Compacto</span>
-                            <span class="tag" data-i18n="sec_tag3b">DIGEMID</span>
-                            <span class="tag" data-i18n="sec_tag3c">Easy setup</span>
-                        </div>
-                        <div class="sector-footer">
-                            <a href="#planes" class="sector-link"><span data-i18n="sec_l3">VER PLANES</span> <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -453,37 +495,46 @@
     </div>
 </section>
 
-<section class="stats-counter-section">
-    <div class="stats-overlay"></div>
-    <div class="container position-relative z-index-2">
-        <div class="row g-4 text-center">
-            <div class="col-6 col-lg-3">
-                <div class="stat-item">
-                    <div class="stat-blob"><i class="bi bi-cpu"></i></div>
-                    <h2 class="stat-number">+<span class="counter" data-target="500">0</span></h2>
-                    <p class="stat-label" data-i18n="stat_l1">Sensores Instalados</p>
+<section class="kairo-story" data-kairo-story>
+    <div class="kairo-story__ambient" aria-hidden="true">
+        <div class="kairo-story__grid"></div>
+        <div class="kairo-story__glow"></div>
+    </div>
+    <div class="kairo-story__track" data-kairo-story-track>
+        <div class="kairo-story__sticky">
+            <div class="kairo-story__text">
+                <div class="kairo-story__block is-active" data-kairo-story-text="0">
+                    <h2 data-i18n="connect_h2">Conecta almacén, equipo y evidencia</h2>
+                    <p data-i18n="connect_lead">KairoLabs une el piso del almacén, el dashboard ejecutivo y la telemetría IoT en una sola plataforma para actuar a tiempo.</p>
+                </div>
+                <div class="kairo-story__block" data-kairo-story-text="1">
+                    <h2 data-i18n="connect_h2b">Controla temperatura, humedad y luz</h2>
+                    <p data-i18n="connect_leadb">Una sola vista para detectar desviaciones, priorizar alertas y proteger cada lote antes de que se convierta en merma.</p>
+                </div>
+                <div class="kairo-story__block" data-kairo-story-text="2">
+                    <h2 data-i18n="connect_h2c">Evidencia lista para auditar</h2>
+                    <p data-i18n="connect_leadc">Históricos por sede y lote para DIGEMID y MINSA, con el equipo operando sobre los mismos datos.</p>
                 </div>
             </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-item">
-                    <div class="stat-blob"><i class="bi bi-building-check"></i></div>
-                    <h2 class="stat-number"><span class="counter" data-target="60">0</span></h2>
-                    <p class="stat-label" data-i18n="stat_l2">Hubs Logísticos</p>
-                </div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-item">
-                    <div class="stat-blob"><i class="bi bi-shield-fill-check"></i></div>
-                    <h2 class="stat-number"><span class="counter" data-target="96">0</span>%</h2>
-                    <p class="stat-label" data-i18n="stat_l3">Eficiencia Logística</p>
-                </div>
-            </div>
-            <div class="col-6 col-lg-3">
-                <div class="stat-item text-center">
-                    <div class="stat-blob"><i class="bi bi-broadcast-pin"></i></div>
-                    <h2 class="stat-number">24/7</h2>
-                    <p class="stat-label" data-i18n="stat_l4">Activos para ti</p>
-                </div>
+            <div class="kairo-story__cards">
+                <article class="kairo-story__card" data-kairo-story-card="left">
+                    <figure class="kairo-story__media">
+                        <img src="Imagenes/section_2.jpeg" alt="Operación diaria">
+                    </figure>
+                    <h3 data-i18n="connect_c1">Operación diaria</h3>
+                </article>
+                <article class="kairo-story__card kairo-story__card--center is-hero" data-kairo-story-card="center">
+                    <figure class="kairo-story__media">
+                        <img src="Imagenes/section_3.jpeg" alt="Control integral">
+                    </figure>
+                    <h3 data-i18n="connect_c2">Control integral</h3>
+                </article>
+                <article class="kairo-story__card" data-kairo-story-card="right">
+                    <figure class="kairo-story__media">
+                        <img src="Imagenes/Hospital-meditrack.jpeg" alt="Telemetría IoT">
+                    </figure>
+                    <h3 data-i18n="connect_c3">Telemetría IoT</h3>
+                </article>
             </div>
         </div>
     </div>
@@ -492,64 +543,141 @@
 <section id="equipo" class="team-equipo-section py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <span class="team-equipo-kicker d-block mb-2">TECHNOBYTELAMBDERS</span>
+            <span class="team-equipo-kicker d-block mb-2">AETHER SYSTEM</span>
             <h2 class="display-5 fw-bold mb-2 text-dark" data-i18n="team_h2">Integrantes del Equipo</h2>
             <p class="text-muted mx-auto mb-0 team-equipo-lead" data-i18n="team_lead">
-                Impulsando la transformación digital en el sector salud a través de innovación,
-                compromiso y precisión técnica.
+                Equipo Aether System · Ingeniería de Software · UPC
             </p>
             <div class="team-equipo-rule mx-auto mt-3 mb-5" aria-hidden="true"></div>
-            
-            <div class="video-feature-wrapper reveal-item mb-5 mx-auto">
-                <div class="video-feature-card mx-auto">
-                    <div class="video-poster shadow-sm" role="button" tabindex="0" aria-label="Reproducir video de presentación"
-                        data-youtube="CmZFPmtnKm4"
-                        style="background-image: url('https://img.youtube.com/vi/CmZFPmtnKm4/maxresdefault.jpg');">
-                        <div class="video-overlay">
-                            <div class="video-play-wrap">
-                                <i class="bi bi-play-fill video-play" aria-hidden="true"></i>
-                            </div>
+        </div>
+
+        <div class="team-carousel" data-team-carousel>
+            <div class="team-carousel__viewport">
+                <div class="team-carousel__track" data-team-track>
+                    <article class="team-equipo-card">
+                        <img class="team-equipo-card__badge" src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                        <div class="team-equipo-card__photo-wrap">
+                            <img src="Imagenes/dhilsen.jpeg" alt="Mallqui Vilca, Dhilsen Armil" width="400" height="500" loading="lazy">
                         </div>
-                    </div>
-                    <div class="video-caption text-center">
-                        <h5 class="fw-bold mb-1" data-i18n="team_video_header">Conoce al equipo de TechnoByteLambders</h5>
-                        <p class="mb-0" data-i18n="team_video_body">Profesionales apasionados comprometidos con mejorar el monitoreo y conservación de medicamentos a través de la tecnología.</p>
-                    </div>
+                        <p class="team-equipo-card__name">Dhilsen Mallqui</p>
+                        <p class="team-equipo-card__role">Equipo Aether System</p>
+                        <div class="team-equipo-card__hover">
+                            <p class="team-equipo-card__bio" data-i18n="team_b1">Software. Despliegue continuo, documentación y pipelines de verificación.</p>
+                        </div>
+                    </article>
+                    <article class="team-equipo-card">
+                        <img class="team-equipo-card__badge" src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                        <div class="team-equipo-card__photo-wrap team-equipo-card__photo-wrap--initials" data-initials="SV">
+                            <span>SV</span>
+                        </div>
+                        <p class="team-equipo-card__name">Sebastian Diaz</p>
+                        <p class="team-equipo-card__role">Equipo Aether System</p>
+                        <div class="team-equipo-card__hover">
+                            <p class="team-equipo-card__bio" data-i18n="team_b2">UX/UI e interacción. Usabilidad y experiencia del producto.</p>
+                        </div>
+                    </article>
+                    <article class="team-equipo-card">
+                        <img class="team-equipo-card__badge" src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                        <div class="team-equipo-card__photo-wrap team-equipo-card__photo-wrap--initials" data-initials="CR">
+                            <span>CR</span>
+                        </div>
+                        <p class="team-equipo-card__name">Carlo Ramirez</p>
+                        <p class="team-equipo-card__role">Equipo Aether System</p>
+                        <div class="team-equipo-card__hover">
+                            <p class="team-equipo-card__bio" data-i18n="team_b3">Desarrollo web y apps. Java, JS, Flutter y trabajo en equipo.</p>
+                        </div>
+                    </article>
+                    <article class="team-equipo-card">
+                        <img class="team-equipo-card__badge" src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                        <div class="team-equipo-card__photo-wrap team-equipo-card__photo-wrap--initials">
+                            <span>?</span>
+                        </div>
+                        <p class="team-equipo-card__name" data-i18n="team_n4">Integrante por confirmar</p>
+                        <p class="team-equipo-card__role">Equipo Aether System</p>
+                        <div class="team-equipo-card__hover">
+                            <p class="team-equipo-card__bio" data-i18n="team_b4">Perfil en incorporación. Aporte por definir en el sprint.</p>
+                        </div>
+                    </article>
+                    <article class="team-equipo-card">
+                        <img class="team-equipo-card__badge" src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs">
+                        <div class="team-equipo-card__photo-wrap team-equipo-card__photo-wrap--initials">
+                            <span>?</span>
+                        </div>
+                        <p class="team-equipo-card__name" data-i18n="team_n5">Integrante por confirmar</p>
+                        <p class="team-equipo-card__role">Equipo Aether System</p>
+                        <div class="team-equipo-card__hover">
+                            <p class="team-equipo-card__bio" data-i18n="team_b5">Perfil en incorporación. Aporte por definir en el sprint.</p>
+                        </div>
+                    </article>
                 </div>
+            </div>
+            <div class="team-carousel__progress" aria-hidden="true">
+                <span data-team-progress></span>
             </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center">
-            <div class="col">
-                <article class="team-equipo-card h-100">
-                    <div class="team-equipo-card__inner">
-                        <div class="team-equipo-card__photo-wrap">
-                            <img src="Imagenes/dhilsen.jpeg" alt="Dhilsen Armil Mallqui Vilca" width="400" height="500" loading="lazy">
-                        </div>
-                        <p class="team-equipo-card__name">DHILSEN ARMIL MALLQUI VILCA</p>
-                    </div>
-                </article>
+        <div class="team-media" data-team-media>
+            <div class="team-media__switch" role="tablist">
+                <button type="button" class="is-active" data-team-tab="video" data-i18n="team_tab_video">Video</button>
+                <button type="button" data-team-tab="image" data-i18n="team_tab_image">Imagen</button>
             </div>
-            <div class="col">
-                <article class="team-equipo-card h-100">
-                    <div class="team-equipo-card__inner">
-                        <div class="team-equipo-card__photo-wrap">
-                            <img src="Imagenes/Diego.jpeg" alt="Franco Diego Rioja Nuñez" width="400" height="500" loading="lazy">
-                        </div>
-                        <p class="team-equipo-card__name">FRANCO DIEGO RIOJA NUÑEZ</p>
-                    </div>
-                </article>
+            <div class="team-media__stage is-video" data-team-stage="video">
+                <button type="button" class="team-media__play" data-team-play aria-label="Reproducir video">
+                    <i class="bi bi-play-fill"></i>
+                </button>
             </div>
-            <div class="col">
-                <article class="team-equipo-card h-100">
-                    <div class="team-equipo-card__inner">
-                        <div class="team-equipo-card__photo-wrap">
-                            <img src="Imagenes/montoya.jpeg" alt="Alexander Gabriel Montoya Torres" width="400" height="500" loading="lazy">
-                        </div>
-                        <p class="team-equipo-card__name">ALEXANDER GABRIEL MONTOYA TORRES</p>
-                    </div>
-                </article>
+            <div class="team-media__stage is-image" data-team-stage="image" hidden>
+                <div class="team-media__placeholder">
+                    <span class="team-media__spinner" aria-hidden="true"></span>
+                    <p data-i18n="team_img_soon">Imagen del equipo en preparación</p>
+                </div>
             </div>
+            <p class="team-media__copy" data-team-copy data-i18n="team_media_copy">Nuestro equipo une ambos lados del almacén: desde desarrollo y diseño hasta operación y cumplimiento. En KairoLabs convertimos datos, alertas y evidencia en menos merma y una cadena de frío más segura.</p>
+        </div>
+    </div>
+</section>
+
+<section class="kairo-orbit" data-kairo-orbit aria-label="Perspectiva KairoLabs">
+    <div class="kairo-orbit__ambient" aria-hidden="true">
+        <div class="kairo-orbit__glow kairo-orbit__glow--1"></div>
+        <div class="kairo-orbit__glow kairo-orbit__glow--2"></div>
+    </div>
+    <div class="kairo-orbit__center">
+        <div class="kairo-orbit__text-glow" aria-hidden="true"></div>
+        <p class="kairo-orbit__text" data-i18n="orbit_text">Nuestro equipo une el piso del almacén y la gestión sanitaria: datos, alertas y evidencia. Esa mirada es lo que hace distinto a KairoLabs.</p>
+    </div>
+    <div class="kairo-orbit__items" aria-hidden="true">
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-broadcast"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-clock-history"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-snow"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-thermometer-high"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-droplet-half"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-brightness-high"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-bell-fill"></i></div>
+        </div>
+        <div class="kairo-orbit__item" data-kairo-orbit-item>
+            <div class="kairo-orbit__item-glow"></div>
+            <div class="kairo-orbit__item-content"><i class="bi bi-shield-fill-check"></i></div>
         </div>
     </div>
 </section>
@@ -565,71 +693,109 @@
             </p>
         </div>
 
-        <div class="row g-4 align-items-stretch justify-content-center">
-            <div class="col-lg-4">
-                <div class="pricing-card-white h-100 reveal-card">
-                    <div class="pricing-header">
-                        <span class="plan-name" data-i18n="plan_basic">BÁSICO</span>
-                        <div class="plan-price">$49<span class="price-period" data-i18n="plan_period">/mes</span></div>
-                        <p class="plan-desc" data-i18n="plan_d1">Ideal para farmacias y clínicas con una sola sede. Monitoreo básico en tiempo real.</p>
-                    </div>
-                    <div class="pricing-divider"></div>
-                    <ul class="pricing-features">
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f1">Monitoreo de 1 sede</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f2">Visualización en tiempo real</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f3">Alertas básicas por email</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f4">30 días de historial</span></li>
-                        <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan1_f5">Múltiples áreas</span></li>
-                        <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan1_f6">Reportes avanzados</span></li>
-                    </ul>
-                    <div class="pricing-footer">
-                        <a href="#contacto" class="btn btn-outline-pricing" data-i18n="plan1_btn">Seleccionar Básico</a>
-                    </div>
-                </div>
-            </div>
+        <div class="pricing-fan" data-pricing-fan>
+            <div class="pricing-fan__viewport" data-pricing-fan-viewport>
+                <div class="pricing-fan__deck">
+                    <article class="pricing-card-white" data-pricing-fan-card>
+                        <div class="pricing-header">
+                            <span class="plan-name" data-i18n="plan_pilot">PILOTO</span>
+                            <div class="plan-price">$0<span class="price-period" data-i18n="plan_period">/mes</span></div>
+                            <p class="plan-desc" data-i18n="plan_d0">Prueba KairoLabs en una cámara fría y valida el impacto antes de escalar.</p>
+                        </div>
+                        <div class="pricing-divider"></div>
+                        <ul class="pricing-features">
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan0_f1">1 sensor · 1 área</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan0_f2">14 días de prueba</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan0_f3">Alertas por email</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan0_f4">Onboarding incluido</span></li>
+                            <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan0_f5">WhatsApp / SMS</span></li>
+                            <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan0_f6">Multi-sede</span></li>
+                        </ul>
+                        <div class="pricing-footer">
+                            <a href="#contacto" class="btn btn-outline-pricing" data-i18n="plan0_btn">Probar ahora</a>
+                        </div>
+                    </article>
 
-            <div class="col-lg-4">
-                <div class="pricing-card-white highlight reveal-card">
-                    <div class="recommended-badge" data-i18n="plan_rec">RECOMENDADO</div>
-                    <div class="pricing-header">
-                        <span class="plan-name orange-text" data-i18n="plan_pro">PROFESIONAL</span>
-                        <div class="plan-price">$149<span class="price-period" data-i18n="plan_period">/mes</span></div>
-                        <p class="plan-desc" data-i18n="plan_d2">Para centros de distribución y hospitales con múltiples áreas o sucursales.</p>
-                    </div>
-                    <div class="pricing-divider"></div>
-                    <ul class="pricing-features">
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f1">Supervisión de varias áreas</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f2">Alertas avanzadas (SMS/WhatsApp)</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f3">1 año de historial</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f4">Reportes y dashboards</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f5">Historial extendido</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f6">Integración con sistemas</span></li>
-                    </ul>
-                    <div class="pricing-footer">
-                        <a href="#contacto" class="btn btn-solid-pricing"><span data-i18n="plan2_btn">Comenzar ahora</span> <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
+                    <article class="pricing-card-white" data-pricing-fan-card>
+                        <div class="pricing-header">
+                            <span class="plan-name" data-i18n="plan_basic">BÁSICO</span>
+                            <div class="plan-price">$49<span class="price-period" data-i18n="plan_period">/mes</span></div>
+                            <p class="plan-desc" data-i18n="plan_d1">Ideal para farmacias y clínicas con una sola sede. Monitoreo básico en tiempo real.</p>
+                        </div>
+                        <div class="pricing-divider"></div>
+                        <ul class="pricing-features">
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f1">Monitoreo de 1 sede</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f2">Visualización en tiempo real</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f3">Alertas básicas por email</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan1_f4">30 días de historial</span></li>
+                            <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan1_f5">Múltiples áreas</span></li>
+                            <li class="inactive"><i class="bi bi-x-circle-fill"></i> <span data-i18n="plan1_f6">Reportes avanzados</span></li>
+                        </ul>
+                        <div class="pricing-footer">
+                            <a href="#contacto" class="btn btn-outline-pricing" data-i18n="plan1_btn">Seleccionar Básico</a>
+                        </div>
+                    </article>
 
-            <div class="col-lg-4">
-                <div class="pricing-card-white h-100 reveal-card">
-                    <div class="pricing-header">
-                        <span class="plan-name" data-i18n="plan_prem">PREMIUM</span>
-                        <div class="plan-price"><span data-i18n="plan_custom">Personalizado</span></div>
-                        <p class="plan-desc" data-i18n="plan_d3">Para cadenas farmacéuticas y redes de salud con múltiples sedes a nivel nacional.</p>
-                    </div>
-                    <div class="pricing-divider"></div>
-                    <ul class="pricing-features">
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f1">Monitoreo multi-sedes</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f2">Gestión centralizada</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f3">Automatización total</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f4">Análisis de tendencias</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f5">Soporte prioritario 24/7</span></li>
-                        <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f6">Cumplimiento DIGEMID/MINSA</span></li>
-                    </ul>
-                    <div class="pricing-footer">
-                        <a href="#contacto" class="btn btn-outline-pricing"><span data-i18n="plan3_btn">Contactar ventas</span> <i class="bi bi-arrow-right ms-2"></i></a>
-                    </div>
+                    <article class="pricing-card-white highlight" data-pricing-fan-card>
+                        <div class="recommended-badge" data-i18n="plan_rec">RECOMENDADO</div>
+                        <div class="pricing-header">
+                            <span class="plan-name orange-text" data-i18n="plan_pro">PROFESIONAL</span>
+                            <div class="plan-price">$149<span class="price-period" data-i18n="plan_period">/mes</span></div>
+                            <p class="plan-desc" data-i18n="plan_d2">Para centros de distribución y hospitales con múltiples áreas o sucursales.</p>
+                        </div>
+                        <div class="pricing-divider"></div>
+                        <ul class="pricing-features">
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f1">Supervisión de varias áreas</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f2">Alertas avanzadas (SMS/WhatsApp)</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f3">1 año de historial</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f4">Reportes y dashboards</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f5">Historial extendido</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan2_f6">Integración con sistemas</span></li>
+                        </ul>
+                        <div class="pricing-footer">
+                            <a href="#contacto" class="btn btn-solid-pricing"><span data-i18n="plan2_btn">Comenzar ahora</span> <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="pricing-card-white" data-pricing-fan-card>
+                        <div class="pricing-header">
+                            <span class="plan-name" data-i18n="plan_hosp">HOSPITALARIO</span>
+                            <div class="plan-price">$249<span class="price-period" data-i18n="plan_period">/mes</span></div>
+                            <p class="plan-desc" data-i18n="plan_d4">Para hospitales y farmacias clínicas que vigilan vacunas, biológicos y varias cámaras.</p>
+                        </div>
+                        <div class="pricing-divider"></div>
+                        <ul class="pricing-features">
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f1">Varias cámaras y pabellones</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f2">Rangos 2–8 °C y humedades críticas</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f3">Roles operador / gestor</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f4">Evidencia para auditorías</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f5">Alertas por umbral</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan4_f6">Soporte clínico incluido</span></li>
+                        </ul>
+                        <div class="pricing-footer">
+                            <a href="#contacto" class="btn btn-outline-pricing" data-i18n="plan4_btn">Elegir Hospitalario</a>
+                        </div>
+                    </article>
+
+                    <article class="pricing-card-white" data-pricing-fan-card>
+                        <div class="pricing-header">
+                            <span class="plan-name" data-i18n="plan_prem">PREMIUM</span>
+                            <div class="plan-price"><span data-i18n="plan_custom">Personalizado</span></div>
+                            <p class="plan-desc" data-i18n="plan_d3">Para cadenas farmacéuticas y redes de salud con múltiples sedes a nivel nacional.</p>
+                        </div>
+                        <div class="pricing-divider"></div>
+                        <ul class="pricing-features">
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f1">Monitoreo multi-sedes</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f2">Gestión centralizada</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f3">Automatización total</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f4">Análisis de tendencias</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f5">Soporte prioritario 24/7</span></li>
+                            <li class="active"><i class="bi bi-check-circle-fill"></i> <span data-i18n="plan3_f6">Cumplimiento DIGEMID/MINSA</span></li>
+                        </ul>
+                        <div class="pricing-footer">
+                            <a href="#contacto" class="btn btn-outline-pricing"><span data-i18n="plan3_btn">Contactar ventas</span> <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -640,140 +806,85 @@
     </div>
 </section>
 
-<section id="contacto" class="contact-section-new grid-pattern-bg">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6 reveal-left">
-                <span class="text-orange fw-bold text-uppercase letter-spacing-2 reveal-item" data-i18n="contact_kicker">Soporte Especializado</span>
-                <h2 class="display-5 fw-bold mt-2 reveal-item" data-i18n="contact_h2">Habla con Expertos</h2>
-                <p class="text-muted mt-3 mb-5 reveal-item" data-i18n="contact_lead">
-                    Nuestro equipo de especialistas en IoT está listo para ayudarte a optimizar tu cadena de frío.
-                    Contáctanos para una demostración personalizada y garantiza la integridad de tu inventario.
-                </p>
-
-                <div class="info-grid">
-                    <div class="info-box-new reveal-item">
-                        <div class="info-icon-box"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div class="info-text">
-                            <h6 data-i18n="contact_loc">Ubicación</h6>
-                            <p data-i18n-html="contact_loc_p">Universidad Peruana de Ciencias Aplicadas <br> Lima, Perú</p>
-                        </div>
-                    </div>
-                    <div class="info-box-new reveal-item">
-                        <div class="info-icon-box"><i class="bi bi-envelope-fill"></i></div>
-                        <div class="info-text">
-                            <h6 data-i18n="contact_mail">Email</h6>
-                            <p>contacto@technobytelambders.pe <br> soporte@technobytelambders.pe</p>
-                        </div>
-                    </div>
-                    <div class="info-box-new reveal-item">
-                        <div class="info-icon-box"><i class="bi bi-telephone-fill"></i></div>
-                        <div class="info-text">
-                            <h6 data-i18n="contact_phone">Teléfono</h6>
-                            <p>+51 987 654 321</p>
-                        </div>
-                    </div>
-                    <div class="info-box-new reveal-item">
-                        <div class="info-icon-box"><i class="bi bi-clock-fill"></i></div>
-                        <div class="info-text">
-                            <h6 data-i18n="contact_hours">Horario</h6>
-                            <p data-i18n="contact_hours_p">Lun - Vie: 09:00 - 18:00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="social-title reveal-item" data-i18n="contact_social">Sigue nuestras redes sociales</p>
-                <div class="social-links-circle reveal-item">
-                    <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
-                    <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="col-lg-6 reveal-right">
-                <div class="contact-card-white shadow-lg">
-                    <h3 class="fw-bold mb-3" data-i18n="contact_card_h3">¿Listo para reducir pérdidas y mejorar la conservación?</h3>
-                    <p class="text-muted mb-4 small" data-i18n="contact_card_p">MediTrack Sensor entrega telemetría confiable para optimizar el almacenamiento, humedad y luz. Comienza con un piloto rápido y comprueba el impacto en tu operación.</p>
-
-                    <div class="d-flex flex-wrap gap-2 mb-5 contact-cta-btns">
-                        <a href="https://meditracksensor-iot-frontend.vercel.app/login" class="btn btn-hero flex-grow-1 m-0 py-3 px-2" data-i18n="contact_btn_start">Empezar ahora</a>
-                        <a href="https://wa.me/51987654321" target="_blank" class="btn btn-outline-pricing flex-grow-1 py-3 px-2 m-0" style="border-width: 1px;" data-i18n="contact_btn_demo">Agendar demo comercial</a>
-                    </div>
-
-                    <ul class="list-unstyled contact-feature-list">
-                        <li class="mb-3 d-flex align-items-center gap-3">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span class="text-muted small" data-i18n="contact_li1">Instalación y prueba en sede en 2 semanas</span>
-                        </li>
-                        <li class="mb-3 d-flex align-items-center gap-3">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span class="text-muted small" data-i18n="contact_li2">Onboarding y soporte incluidos</span>
-                        </li>
-                        <li class="mb-0 d-flex align-items-center gap-3">
-                            <i class="bi bi-check-circle-fill"></i>
-                            <span class="text-muted small" data-i18n="contact_li3">Resultados medibles en 30 días</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+<section id="contacto" class="kairo-cta" data-kairo-cta>
+    <div class="kairo-cta__inner">
+        <span class="kairo-cta__badge" data-kairo-cta-extra data-i18n="cta_v_badge">Empieza hoy</span>
+        <h2 class="kairo-cta__title" data-kairo-cta-reveal data-i18n="cta_v_title">Almacenes más inteligentes.
+Conservación más segura.
+Hecho para quien cuida medicamentos.</h2>
+        <p class="kairo-cta__sub" data-kairo-cta-reveal data-i18n="cta_v_sub">Nuestro equipo une el piso del almacén y la gestión sanitaria: datos, alertas y evidencia. Esa mirada es lo que hace distinto a KairoLabs.</p>
+        <div class="kairo-cta__actions" data-kairo-cta-extra>
+            <a href="https://wa.me/51987654321" target="_blank" rel="noopener noreferrer" class="kairo-cta__btn">
+                <span data-i18n="cta_v_btn">Comenzar</span>
+                <span class="kairo-cta__btn-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+            </a>
         </div>
+        <ul class="kairo-cta__perks" data-kairo-cta-extra>
+            <li class="kairo-cta__perk kairo-cta__perk--a">
+                <span class="kairo-cta__perk-icon"><i class="bi bi-unlock"></i></span>
+                <span data-i18n="cta_v_perk1">Sin permanencia</span>
+            </li>
+            <li class="kairo-cta__perk kairo-cta__perk--b">
+                <span class="kairo-cta__perk-icon"><i class="bi bi-lightning-charge"></i></span>
+                <span data-i18n="cta_v_perk2">Configuración en minutos</span>
+            </li>
+            <li class="kairo-cta__perk kairo-cta__perk--c">
+                <span class="kairo-cta__perk-icon"><i class="bi bi-headset"></i></span>
+                <span data-i18n="cta_v_perk3">Soporte en español</span>
+            </li>
+        </ul>
     </div>
 </section>
 
-<footer class="footer-dark-new">
-    <div class="container">
-        <div class="footer-nav-center">
-            <a href="#inicio"><span data-i18n="nav_inicio">Inicio</span></a>
-            <a href="#tecnologia"><span data-i18n="nav_tecnologia">Tecnología</span></a>
-            <a href="#sectores"><span data-i18n="nav_sectores">Sectores</span></a>
-            <a href="#nosotros"><span data-i18n="nav_nosotros">Nosotros</span></a>
-            <a href="#equipo"><span data-i18n="nav_equipo">Equipo</span></a>
-            <a href="#planes"><span data-i18n="nav_planes">Planes</span></a>
-            <a href="#contacto"><span data-i18n="footer_nav_contact">Contacto</span></a>
-        </div>
-
-        <div class="footer-bottom-info row g-4 align-items-center">
-            <div class="col-lg-4">
-                <div class="footer-logo-box text-center">
-                    <img src="Imagenes/Logo_MediTrack.png" alt="MediTrack Logo" height="40" class="mb-2">
-                    <h4 class="fw-bold mb-1">MediTrack <span class="text-orange">Sensor</span></h4>
-                    <p class="small mb-0" data-i18n="footer_tagline">Monitoreo inteligente para medicamentos.</p>
+<footer class="footer-kairo">
+    <div class="footer-kairo__inner">
+        <div class="footer-kairo__grid">
+            <div class="footer-kairo__brand">
+                <nav class="footer-kairo__titles">
+                    <a href="#tecnologia" data-i18n="nav_tecnologia">Tecnología</a>
+                    <a href="#sectores" data-i18n="nav_sectores">Sectores</a>
+                    <a href="#equipo" data-i18n="nav_equipo">Equipo</a>
+                    <a href="#planes" data-i18n="nav_planes">Planes</a>
+                </nav>
+                <p class="footer-kairo__credit" data-i18n="footer_credit">Sitio diseñado por el equipo Aether System</p>
+            </div>
+            <div class="footer-kairo__mid">
+                <nav class="footer-kairo__links">
+                    <a href="#inicio" data-i18n="nav_inicio">Inicio</a>
+                    <a href="#nosotros" data-i18n="nav_nosotros">Nosotros</a>
+                    <a href="terminos.html" data-i18n="footer_terms">Términos y Condiciones</a>
+                    <a href="#contacto" data-i18n="footer_nav_contact">Contacto</a>
+                </nav>
+                <div class="footer-kairo__chips">
+                    <span><i class="bi bi-geo-alt"></i> UPC · Lima</span>
+                    <span><i class="bi bi-broadcast"></i> IoT 24/7</span>
                 </div>
             </div>
-
-            <div class="col-lg-4 text-center">
-                <div class="footer-contact-details small">
-                    <p class="mb-1"><i class="bi bi-geo-alt text-orange me-2"></i> UPC - Lima, Perú</p>
-                    <p class="mb-1"><i class="bi bi-telephone text-orange me-2"></i> +51 987 654 321</p>
-                    <p class="mb-0"><i class="bi bi-envelope text-orange me-2"></i> contacto@technobytelambders.pe</p>
+            <div class="footer-kairo__cta-col">
+                <p class="footer-kairo__lead" data-i18n="footer_cta_lead">Almacenes más inteligentes empiezan aquí. Únete a los equipos que ya operan con datos, no con supuestos.</p>
+                <a href="#contacto" class="footer-kairo__cta">
+                    <span data-i18n="footer_cta_btn">Prueba KairoLabs ahora</span>
+                    <span aria-hidden="true">:)</span>
+                </a>
+                <div class="footer-kairo__social">
+                    <span class="footer-kairo__social-label" data-i18n="footer_follow">Síguenos:</span>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                 </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="subscribe-box">
-                    <h6 class="text-uppercase letter-spacing-1 mb-3" data-i18n="footer_subscribe">Suscríbete al boletín</h6>
-                    <form class="subscribe-form mb-3">
-                        <input type="email" class="subscribe-input" data-i18n-placeholder="ph_subscribe" placeholder="Tu correo electrónico">
-                        <button type="submit" class="subscribe-btn"><i class="bi bi-chevron-right"></i></button>
-                    </form>
-                    <div class="payment-icons justify-content-center">
-                        <img src="https://img.icons8.com/color/48/visa.png" class="payment-badge" alt="Visa">
-                        <img src="https://img.icons8.com/color/48/mastercard.png" class="payment-badge" alt="Mastercard">
-                        <img src="https://img.icons8.com/color/48/paypal.png" class="payment-badge" alt="Paypal">
-                    </div>
-                </div>
+                <p class="footer-kairo__copy" data-i18n="footer_legal_copy">© 2026 KairoLabs · Aether System (UPC). Todos los derechos reservados.</p>
             </div>
         </div>
-
-        <div class="text-center mt-4 pt-4 border-top border-white border-opacity-10 small">
-            <p class="mb-2 mb-lg-3 opacity-75" data-i18n="footer_legal_copy">© 2026 MediTrack Sensor (UPC). Todos los derechos reservados.</p>
-            <a href="terminos.html" class="footer-terms-link d-inline-block"><span data-i18n="footer_terms">Términos y Condiciones</span></a>
-        </div>
+    </div>
+    <div class="footer-physics" data-footer-physics>
+        <div class="footer-physics__world" data-footer-physics-world aria-hidden="true"></div>
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/script.js"></script>
 </body>

@@ -1,24 +1,25 @@
-# MediTrack Sensor Landing Page
+# KairoLabs Landing Page
 
-Landing page institucional para **MediTrack Sensor**, una solución de monitoreo IoT orientada a la logística farmacéutica y al control de condiciones críticas en tiempo real.
+Landing page institucional para **KairoLabs**, producto IoT de monitoreo de condiciones críticas (temperatura, humedad y luz) en la cadena de conservación de medicamentos.
 
-Este proyecto fue desarrollado como parte de un trabajo universitario por **TechnoByteLambders** para presentar una propuesta moderna, clara y visualmente atractiva de una plataforma de monitoreo para entornos farmacéuticos.
+Desarrollada por el equipo **Aether System** en el marco del curso **1ASI0732 – Diseño de Experimentos de Ingeniería de Software** (UPC).
 
 ## Descripción
 
-La página presenta de manera visual los beneficios de MediTrack Sensor, incluyendo:
+La página presenta de manera visual la propuesta de valor de KairoLabs:
 
 - Monitoreo 360° de variables críticas.
-- Soluciones para logística industrial, hospitales regionales y farmacias.
+- Soluciones para hospitales, clínicas, farmacias y distribución farmacéutica.
 - Paneles informativos con métricas y planes de servicio.
 - Sección de contacto y navegación responsiva.
+- Enfoque experimental: hipótesis verificables, validación y entrega continua.
 
 ## Características
 
 - Diseño responsive adaptado a escritorio, tablet y móvil.
 - Navegación fija con menú hamburguesa en pantallas pequeñas.
 - Secciones dinámicas con animaciones de revelado.
-- Tarjetas informativas para tecnología, sectores y planes.
+- i18n ES / EN.
 - Footer institucional con información de contacto y suscripción.
 
 ## Tecnologías utilizadas
@@ -28,35 +29,24 @@ La página presenta de manera visual los beneficios de MediTrack Sensor, incluye
 - JavaScript
 - Bootstrap 5.3
 - Bootstrap Icons
-- Google Fonts
-
-## Estructura del proyecto
-
-```text
-MediTrackSensor-Landing-Page/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-└── Imagenes/
-```
+- Google Fonts (Outfit)
 
 ## Cómo ejecutar el proyecto
 
-1. Clona o descarga el repositorio.
-2. Abre la carpeta del proyecto en Visual Studio Code o en tu editor preferido.
-3. Abre el archivo `index.html` en el navegador.
-4. Si deseas una vista previa más cómoda, puedes usar la extensión Live Server en VS Code.
+```bash
+npx serve -l 5500
+```
+
+Luego abre: [http://localhost:5500](http://localhost:5500)
 
 ## Equipo
 
-**TechnoByteLambders**  
-Proyecto académico con enfoque en innovación aplicada a salud y logística farmacéutica.
+**Aether System**  
+Proyecto académico — Diseño de Experimentos · Ingeniería de Software · UPC
 
 ## Estado del proyecto
 
-Landing page funcional y lista para presentación académica.
+Landing page funcional y alineada al informe de KairoLabs (AVANCE 1).
 
 ## Licencia
 
