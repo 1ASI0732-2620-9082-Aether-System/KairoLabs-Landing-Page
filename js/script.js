@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(href);
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 80, // Adjust for sticky navbar
+                    top: target.offsetTop - 88,
                     behavior: 'smooth'
                 });
             }
@@ -67,14 +67,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initIoTSimulation();
 
-    // Change Navbar appearance on scroll
-    const navbar = document.querySelector('.navbar-new');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+    const siteHeader = document.getElementById('siteHeader');
+    const navLinks = document.querySelectorAll('.site-header__links .nav-link');
+    const navCollapse = document.getElementById('navbarNav');
+
+    const syncHeader = () => {
+        if (siteHeader) {
+            siteHeader.classList.toggle('is-compact', window.scrollY > 24);
         }
+    };
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+
+    const sectionIds = [...navLinks].map((link) => link.getAttribute('href')).filter(Boolean);
+    const setActiveLink = () => {
+        const marker = window.scrollY + 120;
+        let current = sectionIds[0];
+        sectionIds.forEach((id) => {
+            const section = document.querySelector(id);
+            if (section && section.offsetTop <= marker) {
+                current = id;
+            }
+        });
+        navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === current);
+        });
+    };
+    setActiveLink();
+    window.addEventListener('scroll', setActiveLink, { passive: true });
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (navCollapse && navCollapse.classList.contains('show') && window.bootstrap) {
+                bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+            }
+        });
     });
 
     // Reveal animations on scroll (Simple Intersection Observer)

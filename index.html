@@ -36,50 +36,40 @@
     <p class="page-loader__text">KairoLabs</p>
 </div>
 
-<div class="top-header-new d-none d-lg-block">
-    <div class="container d-flex justify-content-between align-items-center h-100">
-        <div class="contact-links">
-            <span class="me-4"><i class="bi bi-telephone text-orange me-2"></i> +51 987 654 321</span>
-            <span><i class="bi bi-envelope text-orange me-2"></i> contacto@kairolabs.pe</span>
-        </div>
-        <div class="social-links-top d-flex align-items-center flex-wrap justify-content-end gap-2">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        </div>
+<div class="site-header" id="siteHeader">
+    <div class="site-header__wrap">
+        <nav class="navbar navbar-expand-lg site-header__bar" aria-label="Principal">
+            <a class="navbar-brand d-flex align-items-center" href="#inicio">
+                <img src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs Logo" height="40" class="me-2">
+                <span class="fw-bold fs-4 brand-wordmark">Kairo<span class="text-orange">Labs</span></span>
+            </a>
+            <button class="navbar-toggler border-0 site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse site-header__collapse" id="navbarNav">
+                <ul class="navbar-nav site-header__links">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio"><span data-i18n="nav_inicio">Inicio</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tecnologia"><span data-i18n="nav_tecnologia">Tecnología</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sectores"><span data-i18n="nav_sectores">Sectores</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros"><span data-i18n="nav_nosotros">Nosotros</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipo"><span data-i18n="nav_equipo">Equipo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#planes"><span data-i18n="nav_planes">Planes</span></a></li>
+                </ul>
+                <div class="site-header__actions">
+                    <div class="lang-switch lang-switch--nav d-flex align-items-center" role="group" data-i18n-aria="lang_group_aria" aria-label="Seleccionar idioma">
+                        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                        <span class="lang-divider" aria-hidden="true">|</span>
+                        <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+                    </div>
+                    <a href="#contacto" class="btn-nav-cta btn-hero-sweep">
+                        <span data-i18n="nav_cta">Comienza ahora</span>
+                        <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </div>
 </div>
-
-<nav class="navbar navbar-expand-lg navbar-new shadow-sm sticky-top">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#inicio">
-            <img src="Imagenes/Kairo-Labs-Logo-sin-fondo.png" alt="KairoLabs Logo" height="42" class="me-2">
-            <span class="fw-bold fs-4 brand-wordmark">Kairo<span class="text-orange">Labs</span></span>
-        </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <i class="bi bi-list fs-1 text-brand-navy"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto me-lg-3">
-                <li class="nav-item"><a class="nav-link" href="#inicio"><span data-i18n="nav_inicio">Inicio</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#tecnologia"><span data-i18n="nav_tecnologia">Tecnología</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#sectores"><span data-i18n="nav_sectores">Sectores</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#nosotros"><span data-i18n="nav_nosotros">Nosotros</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#equipo"><span data-i18n="nav_equipo">Equipo</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#planes"><span data-i18n="nav_planes">Planes</span></a></li>
-            </ul>
-            <div class="lang-switch lang-switch--nav d-flex align-items-center my-2 my-lg-0" role="group" data-i18n-aria="lang_group_aria" aria-label="Seleccionar idioma">
-                <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-                <span class="lang-divider" aria-hidden="true">|</span>
-                <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-            </div>
-            <a href="#contacto" class="btn-nav-cta btn-hero-sweep">
-                <span data-i18n="nav_cta">Comienza ahora</span>
-                <span class="btn-hero-icon" aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-            </a>
-        </div>
-    </div>
-</nav>
 
 <header id="inicio" class="hero-section">
     <video class="hero-video" autoplay muted loop playsinline poster="Imagenes/section_home-hero.jpeg" aria-hidden="true">
